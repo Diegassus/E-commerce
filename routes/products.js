@@ -7,9 +7,9 @@ const productsRouter = Router();
 
 productsRouter.post("/",[verifyToken,roleValidator], createProduct);
 
-productsRouter.get("/", getAllProducts);
+productsRouter.get("/",verifyToken, getAllProducts);
 
-productsRouter.get("/:id", getProduct);
+productsRouter.get("/:id",verifyToken, getProduct);
 
 productsRouter.put("/:id", [verifyToken,roleValidator], updateProduct);
 
